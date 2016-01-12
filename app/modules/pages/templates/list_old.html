@@ -1,0 +1,5 @@
+<ul>
+    <% _.each(pages, function(page){ %>
+    <li><a href='pages/<%= page.get("url") %>'><%= page.get("title") %></a> <button class="js-view">View</button> <button class="js-delete">Delete</button></li>
+    <% }); %>
+</ul>

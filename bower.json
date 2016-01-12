@@ -1,0 +1,29 @@
+{
+    "name": "Single Page Admin",
+    "version": "0.0.0",
+    "homepage": "https://github.com/vanik/single-page-admin",
+    "authors": [
+        "Ivan Manachyn <manachyn@gmail.com>"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "jquery": "~1.11.0",
+        "backbone": "~1.1.2",
+        "requirejs": "~2.1.11",
+        "requirejs-text":"~2.0.10",
+        "backbone.localStorage": "~1.1.0",
+        "layoutmanager": "~0.9.5",
+        "marionette": "~2.0.1",
+        "spin.js": "~2.0.1",
+        "backbone.syphon": "~0.4.1",
+        "jquery-ui": "~1.11.0",
+        "backbone.paginator": "~2.0.1"
+    }
+}

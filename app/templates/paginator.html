@@ -1,0 +1,14 @@
+dsfsdf
+<% if (totalPages > 1) { %>
+<ul>
+    <% if (currentPage > 1) { %>
+        <li><a href="<%= baseUrl ? baseUrl + 1 : '' %>" class="navigable" data-page="1">&laquo;</a></li>
+        <li><a href="<%= baseUrl ? baseUrl + (currentPage-1)  : '' %>" class="navigable" data-page="<%= currentPage-1 %>">&lsaquo;</a></li>
+    <% } else { %>
+        <li class="disabled"><a href="#">&laquo;</a></li>
+        <li class="disabled"><a href="#">&lsaquo;</a></li>
+    <% } %>
+
+
+</ul>
+<% } %>

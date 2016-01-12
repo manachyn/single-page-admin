@@ -1,0 +1,13 @@
+Single page admin
+=================
+
+You can interactively create a bower.json with the following command:
+bower init
+
+bower install
+bower install <package>
+
+Configuration
+Bower can be configured using JSON in a .bowerrc file.
+
+

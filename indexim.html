@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>IM</title>
+</head>
+<body>
+<script src="app/libs/jquery/dist/jquery.min.js"></script>
+<script src="app/libs/underscore/underscore.js"></script>
+<script src="app/libs/backbone/backbone.js"></script>
+<script src="app/libs/im/im.js"></script>
+
+<script type="text/javascript">
+    app = new IM.Application();
+
+//    app.Router = Marionette.AppRouter.extend({
+//        appRoutes: {
+//            "contacts": "listContacts"
+//        }
+//    });
+//
+//    var API = {
+//        listContacts: function(){
+//            ContactsApp.List.Controller.listContacts();
+//        }
+//    };
+//
+//    ContactManager.addInitializer(function(){
+//        new ContactsApp.Router({
+//            controller: API
+//        });
+//    });
+
+    ContactManager.module("Entities", function(Entities, ContactManager,
+                                               Backbone, Marionette, $, _){
+        var alertPrivate = function(message){
+            alert("Private alert: " + message);
+        };
+        Entities.alertPublic = function(message){
+            alert("I will now call alertPrivate");
+            alertPrivate(message);
+        };
+    });
+
+    ContactManager.Entities.alertPublic("Hello");
+
+
+    List.Controller = {
+        listContacts: function(){
+            var contacts = ContactManager.request("contact:entities");
+            6
+            var contactsListView = new List.Contacts({
+                collection: contacts
+            });
+            ContactManager.mainRegion.show(contactsListView);
+        }
+    }
+
+
+    app.addInitializer(function(){
+        console.log('Initializer1');
+    });
+    app.addInitializer(function(options){
+        console.log('Initializer2');
+    });
+    app.on('initialize:before', function(){
+        console.log('initialize:before');
+    });
+    app.on('initialize:after', function(){
+        console.log('initialize:after');
+    });
+    app.on('start', function(){
+        console.log('start');
+    });
+    app.start({test: 123});
+
+</script>
+</body>
+</html>
